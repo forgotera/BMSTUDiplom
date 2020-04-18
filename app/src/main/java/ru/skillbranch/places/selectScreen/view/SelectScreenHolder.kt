@@ -1,4 +1,4 @@
-package ru.skillbranch.places.secectScreen.view
+package ru.skillbranch.places.selectScreen.view
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

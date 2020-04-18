@@ -1,6 +1,6 @@
-package ru.skillbranch.places.secectScreen
+package ru.skillbranch.places.selectScreen
 
-import ru.skillbranch.places.secectScreen.view.SelectScreen
+import ru.skillbranch.places.selectScreen.view.SelectScreen
 
 class SelectScreenConfigurator {
     companion object{
