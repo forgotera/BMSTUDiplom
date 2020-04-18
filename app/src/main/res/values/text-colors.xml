@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="textHeaders">#000000</color>
+    <color name="textTrend">#585858</color>
+    <color name="textRead">#979797</color>
+    <color name="textHints">#BEBEBE</color>
+    <color name="textLinks">#55B3E7</color>
+    <color name="textError">#FEAA06</color>
+    <color name="textSuccess">#8CBA40</color>
+
+</resources>

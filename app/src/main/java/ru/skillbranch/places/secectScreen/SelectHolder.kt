@@ -15,6 +15,7 @@ class SelectHolder(
 
     fun bind(name:String,url:String){
         text.text = name
+        image.setImageResource(R.drawable.test)
     }
 }
 

@@ -8,4 +8,40 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="places"/>
+    <style name="places.H1" parent="places">
+        <item name="android:textSize">36sp</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+    <style name="places.H2" parent="places">
+        <item name="android:textSize">26sp</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+    <style name="places.H3">
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+    <style name="places.H4">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+    <style name="places.Body1" parent="places">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+    <style name="places.Body2">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+    <style name="places.Tiny">
+        <item name="android:textSize">13sp</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+    <style name="places.Lid">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+
+
 </resources>

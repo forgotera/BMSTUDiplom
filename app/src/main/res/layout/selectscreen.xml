@@ -4,6 +4,7 @@
     android:id="@+id/selectScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/uiActionProduct"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,7 +15,6 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/selectValues"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="24dp"/>

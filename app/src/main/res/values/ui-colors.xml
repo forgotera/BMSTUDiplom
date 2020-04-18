@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="uiActionPrimaryVariant">#2D2A2A</color>
+    <color name="uiActionProduct">#FFFFFF</color>
+    <color name="uiDisabled">#DADADA</color>
+    <color name="uiError">#FEAA06</color>
+    <color name="uiSuccess">#8CBA40</color>
+    <color name="uiTrend">#585858</color>
+    <color name="uiNavigation">#979797</color>
+    <color name="uiInputs">#DADADA</color>
+    <color name="uiMessageShape">#E9E9E9</color>
+    <color name="uiDebitCardStart">#4E4E4E</color>
+    <color name="uiDebitCardEnd">#2C2C2C</color>
+
+</resources>
