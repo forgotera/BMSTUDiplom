@@ -1,4 +1,4 @@
-package ru.skillbranch.places.secectScreen
+package ru.skillbranch.places.selectScreen
 
 import android.view.LayoutInflater
 import android.view.View

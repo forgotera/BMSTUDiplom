@@ -5,6 +5,6 @@
 
     <fragment
         android:id="@+id/selectScreen"
-        android:name="ru.skillbranch.places.secectScreen.view.SelectScreen" />
+        android:name="ru.skillbranch.places.selectScreen.view.SelectScreen" />
 
 </navigation>

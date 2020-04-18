@@ -1,6 +1,5 @@
-package ru.skillbranch.places.secectScreen.view
+package ru.skillbranch.places.selectScreen.view
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import ru.skillbranch.places.R
-import ru.skillbranch.places.secectScreen.SelectAdapter
-import ru.skillbranch.places.secectScreen.SelectScreenConfigurator
+import ru.skillbranch.places.selectScreen.SelectAdapter
+import ru.skillbranch.places.selectScreen.SelectScreenConfigurator
 
 class SelectScreen: Fragment() {
 
