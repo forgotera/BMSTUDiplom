@@ -8,7 +8,7 @@ import ru.skillbranch.places.R
 
 class SelectAdapter : RecyclerView.Adapter<SelectHolder>() {
 
-    val values = listOf<String>("test", "test", "test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test")
+    val values = listOf<String>("test", "test", "test")
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectHolder {
         val view: View = LayoutInflater.from(parent.context)
