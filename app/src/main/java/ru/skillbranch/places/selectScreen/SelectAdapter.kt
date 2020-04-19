@@ -8,12 +8,17 @@ import ru.skillbranch.places.R
 
 class SelectAdapter : RecyclerView.Adapter<SelectHolder>() {
 
-    val values = listOf<String>("test", "test", "test")
+    val values = listOf<String>("test", "test", "test","test","test","test",
+        "test","test","test","test","test","test","test","test","test","test",
+        "test","test","test","test","test","test","test","test","test","test",
+        "test","test","test","test","test","test","test","test")
+
+    var  onClick: ((String)->Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectHolder {
         val view: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.selectitem, parent, false)
-        return parent.context.selectHolder(view)
+        return parent.context.selectHolder(view,onClick)
     }
 
     override fun getItemCount(): Int = values.size

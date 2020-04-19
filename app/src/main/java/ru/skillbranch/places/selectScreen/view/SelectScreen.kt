@@ -1,9 +1,12 @@
 package ru.skillbranch.places.selectScreen.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import ru.skillbranch.places.R
@@ -26,9 +29,15 @@ class SelectScreen: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         holder.values.layoutManager = GridLayoutManager(context,2)
-        holder.values.adapter = SelectAdapter()
+        val adapter = SelectAdapter()
+        holder.values.adapter = adapter
+
+        adapter.onClick = {
+        }
+        holder.button.setOnClickListener {
+            //todo show new screen
+        }
 
 
     }
