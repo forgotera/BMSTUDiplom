@@ -1,5 +1,7 @@
 package ru.skillbranch.places.mainview.view
 
-class MainScreen {
-    var s:String = ""
+import androidx.fragment.app.Fragment
+
+class MainScreen: Fragment() {
+
 }

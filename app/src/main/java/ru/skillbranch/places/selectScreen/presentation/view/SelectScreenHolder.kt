@@ -1,4 +1,4 @@
-package ru.skillbranch.places.selectScreen.view
+package ru.skillbranch.places.selectScreen.presentation.view
 
 import android.view.View
 import android.widget.Button

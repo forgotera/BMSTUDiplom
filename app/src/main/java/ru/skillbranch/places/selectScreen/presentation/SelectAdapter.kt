@@ -1,4 +1,4 @@
-package ru.skillbranch.places.selectScreen
+package ru.skillbranch.places.selectScreen.presentation
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +8,9 @@ import ru.skillbranch.places.R
 
 class SelectAdapter : RecyclerView.Adapter<SelectHolder>() {
 
-    val values = listOf<String>("test", "test", "test","test","test","test",
-        "test","test","test","test","test","test","test","test","test","test",
-        "test","test","test","test","test","test","test","test","test","test",
-        "test","test","test","test","test","test","test","test")
+    var values = listOf<String>()
+    var images = listOf<Int>()
+
 
     var  onClick: ((String)->Unit)? = null
 
@@ -24,7 +23,7 @@ class SelectAdapter : RecyclerView.Adapter<SelectHolder>() {
     override fun getItemCount(): Int = values.size
 
     override fun onBindViewHolder(holder: SelectHolder, position: Int) {
-        holder.bind(values[position], "")
+        holder.bind(values[position], images[position])
     }
 
 }

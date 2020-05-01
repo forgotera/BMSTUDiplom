@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_graph">
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainScreen">
 
     <fragment
         android:id="@+id/selectScreen"
-        android:name="ru.skillbranch.places.selectScreen.view.SelectScreen" />
+        android:name="ru.skillbranch.places.selectScreen.presentation.view.SelectScreen" >
+    </fragment>
+
+    <dialog
+        android:id="@+id/dialog"
+        android:name="ru.skillbranch.places.dialog.Dialog"/>
+
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="ru.skillbranch.places.mainview.view.MainScreen" />
+
 
 </navigation>

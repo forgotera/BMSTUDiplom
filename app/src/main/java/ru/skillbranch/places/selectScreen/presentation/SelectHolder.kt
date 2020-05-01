@@ -1,8 +1,6 @@
-package ru.skillbranch.places.selectScreen
+package ru.skillbranch.places.selectScreen.presentation
 
 import android.content.Context
-import android.graphics.Color
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -18,12 +16,12 @@ class SelectHolder(
     private val onClick: ((String) -> Unit)?
 ) : RecyclerView.ViewHolder(view) {
 
-    fun bind(name: String, url: String) {
+    fun bind(name: String, url: Int) {
         view.setOnClickListener {
-            onClick?.invoke("")
+            onClick?.invoke(name)
         }
         text.text = name
-        image.setImageResource(R.drawable.test)
+        image.setImageResource(url)
     }
 }
 

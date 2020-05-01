@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">places</string>
     <string name="button_next">Продолжить</string>
+    <string name="welcome">Приветствуем</string>
+    <string name="explanetion">Выбери заведения, которые ты посещаешь чаще всего, эти заведения будут предложены тебе в последнию очередь</string>
+    <string name="undestand">Понятно</string>
 </resources>

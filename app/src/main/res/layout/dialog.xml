@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/dialog_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="123dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/dialog_header_textView"
+            style="@style/places.H2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="18dp"
+            android:gravity="bottom"
+            android:text="@string/welcome"
+            android:textColor="@color/textHints" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/dialog_textView"
+        style="@style/places.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/explanetion"
+        android:textColor="@color/textTrend" />
+
+    <Button
+        android:id="@+id/dialog_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="14dp"
+        android:background="@android:color/transparent"
+        android:text="@string/undestand"
+        android:textColor="@color/colorPrimary" />
+</LinearLayout>
