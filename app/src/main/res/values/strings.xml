@@ -4,4 +4,6 @@
     <string name="welcome">Приветствуем</string>
     <string name="explanetion">Выбери заведения, которые ты посещаешь чаще всего, эти заведения будут предложены тебе в последнию очередь</string>
     <string name="undestand">Понятно</string>
+    <string name="input_name">Введите имя</string>
+    <string name="settings_screen_apply">Применить</string>
 </resources>

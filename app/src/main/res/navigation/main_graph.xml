@@ -6,16 +6,15 @@
 
     <fragment
         android:id="@+id/selectScreen"
-        android:name="ru.skillbranch.places.selectScreen.presentation.view.SelectScreen" >
-    </fragment>
-
-    <dialog
-        android:id="@+id/dialog"
-        android:name="ru.skillbranch.places.dialog.Dialog"/>
+        android:name="ru.skillbranch.places.screens.selectScreen.presentation.view.SelectScreen"/>
 
     <fragment
         android:id="@+id/mainScreen"
-        android:name="ru.skillbranch.places.mainview.view.MainScreen" />
+        android:name="ru.skillbranch.places.screens.mainScreen.view.MainScreen" />
+
+    <fragment
+        android:id="@+id/settingsScreen"
+        android:name="ru.skillbranch.places.screens.settingsScreen.view.SettingsScreen" />
 
 
 </navigation>

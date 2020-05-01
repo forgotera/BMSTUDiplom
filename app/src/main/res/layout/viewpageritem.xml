@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/viewPagerHeader"
+            style="@style/places.H3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="319dp"
+            android:textColor="@color/textHeaders"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Пейнтбол" />
+
+        <ImageView
+            android:id="@+id/viewPagerImage"
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewPagerHeader"
+            tools:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <ImageView
+            android:id="@+id/viewPagerImageInfo"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/viewPagerTextInfo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewPagerImage"
+            tools:srcCompat="@android:drawable/btn_dialog" />
+
+        <TextView
+            android:id="@+id/viewPagerTextInfo"
+            style="@style/places.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textTrend"
+            app:layout_constraintStart_toEndOf="@+id/viewPagerImageInfo"
+            app:layout_constraintTop_toBottomOf="@+id/viewPagerImage"
+            tools:text="Стреляльки" />
+
+        <ImageView
+            android:id="@+id/viewPagerImagePlace"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewPagerImageInfo"
+            tools:srcCompat="@android:drawable/button_onoff_indicator_on" />
+
+        <TextView
+            android:id="@+id/viewPagerTextPlace"
+            style="@style/places.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textTrend"
+            app:layout_constraintStart_toEndOf="@+id/viewPagerImagePlace"
+            app:layout_constraintTop_toBottomOf="@+id/viewPagerTextInfo"
+            tools:text="дом кукушкина" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
