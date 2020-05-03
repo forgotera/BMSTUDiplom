@@ -4,8 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
+import ru.skillbranch.places.dataSource.PlacesFilter
+import ru.skillbranch.places.dataSource.RealmProvider
+import ru.skillbranch.places.utils.activity
 
 class MainActivity : AppCompatActivity() {
+
+//    val realmProvider = RealmProvider(applicationContext)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

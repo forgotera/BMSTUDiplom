@@ -19,7 +19,6 @@ class SelectScreen : Fragment() {
     lateinit var model: SelectScreenViewModel
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,18 +30,17 @@ class SelectScreen : Fragment() {
     }
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         holder.values.layoutManager = GridLayoutManager(context, 2)
         val adapter =
             SelectAdapter()
-        Dialog().show(activity?.supportFragmentManager!!,"sdf")
+        Dialog().show(activity?.supportFragmentManager!!, "")
         holder.values.adapter = adapter
 
         //значения из общейго мапа - в перспективе бд
-        adapter.values = MAIN_DICTIONARY.keys.toMutableList()
-        adapter.images = MAIN_DICTIONARY.values.toMutableList()
+        adapter.values = model.getValues()
+        adapter.images = model.getImages()
 
         adapter.onClick = { value ->
             model.check(value)

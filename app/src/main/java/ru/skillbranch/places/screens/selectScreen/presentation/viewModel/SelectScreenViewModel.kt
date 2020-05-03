@@ -43,4 +43,12 @@ class SelectScreenViewModel(
         SHOWS_VALUES.removeAll(selectedValues)
     }
 
+    fun getValues(): List<String> =
+        interactor.getPlaces()
+
+    fun getImages(): List<Int> =
+        interactor.getImages()
+
+
+
 }
