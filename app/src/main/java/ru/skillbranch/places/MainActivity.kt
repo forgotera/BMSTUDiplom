@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         daggerApplication = DaggerApplication.get(this)
         //init dataBase
-        daggerApplication.daggerDbComponent.getRealmProvider().initialization()
+        daggerApplication.daggerMainActivityComponent.getRealmProvider().initialization()
 
         val controller = findNavController(R.id.currentNavHostId)
         controller.graph = controller.navInflater.inflate(R.navigation.main_graph).apply {
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         //close DataBase
-        daggerApplication.daggerDbComponent.getRealmProvider().close()
+        daggerApplication.daggerMainActivityComponent.getRealmProvider().close()
     }
 }
 

@@ -5,7 +5,7 @@ import ru.skillbranch.places.dataSource.RealmProvider
 
 @RealmProviderScope
 @Component(modules = [RealmProviderModule::class])
-interface DbComponent {
+interface MainActivityComponent {
 
     fun getRealmProvider(): RealmProvider
 }

@@ -3,13 +3,13 @@ package ru.skillbranch.places
 import android.app.Activity
 import android.app.Application
 import ru.skillbranch.places.dagger2.ContextModule
-import ru.skillbranch.places.dagger2.DaggerDbComponent
-import ru.skillbranch.places.dagger2.DbComponent
+import ru.skillbranch.places.dagger2.DaggerMainActivityComponent
+import ru.skillbranch.places.dagger2.MainActivityComponent
 
 
 class DaggerApplication : Application() {
 
-    lateinit var daggerDbComponent: DbComponent
+    lateinit var daggerMainActivityComponent: MainActivityComponent
 
     companion object {
         fun get(activity: Activity): DaggerApplication {
@@ -19,7 +19,7 @@ class DaggerApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        daggerDbComponent = DaggerDbComponent.builder()
+        daggerMainActivityComponent = DaggerMainActivityComponent.builder()
             .contextModule(ContextModule(this))
             .build()
     }

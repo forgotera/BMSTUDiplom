@@ -5,9 +5,7 @@ import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.exceptions.RealmException
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
 class RealmProvider @Inject constructor(
     private val context: Context
 ) {

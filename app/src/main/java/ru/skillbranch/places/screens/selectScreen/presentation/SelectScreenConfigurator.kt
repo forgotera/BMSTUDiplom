@@ -13,8 +13,9 @@ class SelectScreenConfigurator {
 
     companion object {
         fun create(screen: SelectScreen) {
+
             val daggerApplication = DaggerApplication.get(screen.requireActivity())
-            val provider = daggerApplication.daggerDbComponent.getRealmProvider()
+            val provider = daggerApplication.daggerMainActivityComponent.getRealmProvider()
 
             val selectRouter =
                 SelectRouterImpl(

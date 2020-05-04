@@ -15,7 +15,7 @@ class MainScreenConfigurator {
 
         fun create(screen: MainScreen) {
             val daggerApplication = DaggerApplication.get(screen.requireActivity())
-            val provider = daggerApplication.daggerDbComponent.getRealmProvider()
+            val provider = daggerApplication.daggerMainActivityComponent.getRealmProvider()
 
             val repository = MainScreenRepositoryImpl(
                 PlacesFilter(provider)
