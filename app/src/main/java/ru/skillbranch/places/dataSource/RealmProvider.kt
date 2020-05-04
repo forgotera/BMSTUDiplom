@@ -4,8 +4,11 @@ import android.content.Context
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.exceptions.RealmException
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class RealmProvider(
+@Singleton
+class RealmProvider @Inject constructor(
     private val context: Context
 ) {
     private var configuration: RealmConfiguration? = null
@@ -24,7 +27,7 @@ class RealmProvider(
     val instance: Realm
         get() = _realm ?: error("Realm not initialized")
 
-    fun initialization(pin: String): Boolean {
+    fun initialization(): Boolean {
         val pinConfiguration = realmConfiguration()
         return when {
             checkRealm(pinConfiguration) -> {

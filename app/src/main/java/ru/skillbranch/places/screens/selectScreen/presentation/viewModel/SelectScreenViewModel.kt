@@ -1,13 +1,8 @@
 package ru.skillbranch.places.screens.selectScreen.presentation.viewModel
 
-import ru.skillbranch.places.dictionary.SHOWS_VALUES
 import ru.skillbranch.places.screens.selectScreen.domain.interactor.SelectInteractor
 import ru.skillbranch.places.screens.selectScreen.presentation.SelectRouter
-import ru.skillbranch.places.screens.selectScreen.presentation.view.SelectScreenPartialStateChanges
-import ru.skillbranch.places.screens.selectScreen.presentation.view.SelectScreenViewState
-import ru.skillbranch.places.screens.selectScreen.presentation.view.ShowHint
 import ru.skillbranch.places.utils.BaseViewModel
-import ru.skillbranch.places.utils.mutableLiveData
 
 class SelectScreenViewModel(
     private val router: SelectRouter,
@@ -15,18 +10,7 @@ class SelectScreenViewModel(
 ) : BaseViewModel() {
     private val selectedValues = mutableListOf<String>()
 
-    val viewState = mutableLiveData(SelectScreenViewState())
 
-
-    init{
-        setNewState(ShowHint)
-    }
-
-    private fun setNewState(partailChanges:SelectScreenPartialStateChanges){
-        viewState.value?.let {
-            this.viewState.value = partailChanges.computeNewState(it)
-        }
-    }
     fun showNext() {
         router.showNext()
     }
@@ -40,7 +24,7 @@ class SelectScreenViewModel(
     }
 
     fun takeSelected() {
-        SHOWS_VALUES.removeAll(selectedValues)
+        interactor.saveDataBase(selectedValues)
     }
 
     fun getValues(): List<String> =

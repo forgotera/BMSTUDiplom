@@ -1,11 +1,11 @@
-package ru.skillbranch.places.screens.mainScreen.view
+package ru.skillbranch.places.screens.mainScreen.presentation.view
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.skillbranch.places.R
-import ru.skillbranch.places.screens.mainScreen.model.PlacesModel
+import ru.skillbranch.places.screens.mainScreen.presentation.model.PlacesModel
 
 class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerHolder>() {
 

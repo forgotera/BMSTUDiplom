@@ -24,9 +24,9 @@ class PlacesFilter(
             realm.where<PlacesListDb>(PlacesListDb::class.java).findFirst()
         }.let {
             val sublist = it?.placeList?.take(TAKES_PLACES) ?: emptyList()
-            //удаляем записи с начала
+            //удаляем записи из начала
             it?.placeList?.removeAll(sublist)
-            //добавляем в конец перемешав
+            //добавляем в конец,перемешав
             it?.placeList?.addAll(sublist.shuffled())
             sublist
         }

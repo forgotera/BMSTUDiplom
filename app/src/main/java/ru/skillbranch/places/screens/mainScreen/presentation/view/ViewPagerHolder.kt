@@ -1,4 +1,4 @@
-package ru.skillbranch.places.screens.mainScreen.view
+package ru.skillbranch.places.screens.mainScreen.presentation.view
 
 import android.content.Context
 import android.view.View

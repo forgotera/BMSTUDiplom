@@ -1,6 +1,8 @@
 package ru.skillbranch.places.screens.selectScreen.presentation
 
 import androidx.navigation.fragment.findNavController
+import ru.skillbranch.places.DaggerApplication
+import ru.skillbranch.places.dataSource.PlacesFilter
 import ru.skillbranch.places.screens.selectScreen.domain.interactor.SelectInteractorImpl
 import ru.skillbranch.places.screens.selectScreen.data.SelectScreenRepositoryImpl
 import ru.skillbranch.places.screens.selectScreen.presentation.view.SelectScreen
@@ -11,15 +13,20 @@ class SelectScreenConfigurator {
 
     companion object {
         fun create(screen: SelectScreen) {
+            val daggerApplication = DaggerApplication.get(screen.requireActivity())
+            val provider = daggerApplication.daggerDbComponent.getRealmProvider()
 
             val selectRouter =
                 SelectRouterImpl(
                     screen.findNavController()
                 )
 
-            val selectScrenRepository = SelectScreenRepositoryImpl()
+            val selectScreenRepository = SelectScreenRepositoryImpl(
+                PlacesFilter(provider)
+            )
+
             val interactor = SelectInteractorImpl(
-                selectScrenRepository
+                selectScreenRepository
             )
 
             screen.model = screen.getViewModel {

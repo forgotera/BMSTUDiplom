@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import ru.skillbranch.places.R
 import ru.skillbranch.places.dialog.Dialog
-import ru.skillbranch.places.dictionary.MAIN_DICTIONARY
 import ru.skillbranch.places.screens.selectScreen.presentation.SelectScreenConfigurator
 import ru.skillbranch.places.screens.selectScreen.presentation.SelectAdapter
 import ru.skillbranch.places.screens.selectScreen.presentation.viewModel.SelectScreenViewModel
@@ -38,7 +37,7 @@ class SelectScreen : Fragment() {
         Dialog().show(activity?.supportFragmentManager!!, "")
         holder.values.adapter = adapter
 
-        //значения из общейго мапа - в перспективе бд
+
         adapter.values = model.getValues()
         adapter.images = model.getImages()
 

@@ -4,6 +4,8 @@ import ru.skillbranch.places.dataSource.pojos.PlacesListDb
 
 fun marshal(place: List<String>, selectedPlaces: List<String>): PlacesListDb {
 
+    //удаляеим из общего числа заведений выбранные
+    place.toMutableList().removeAll(selectedPlaces)
     //размешиваем в случайном порядке
     val shuffledPlace = place.shuffled()
     val shuffledSelectedPlace = selectedPlaces.shuffled()

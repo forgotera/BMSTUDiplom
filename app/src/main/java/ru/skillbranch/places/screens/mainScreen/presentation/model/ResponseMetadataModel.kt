@@ -1,4 +1,4 @@
-package ru.skillbranch.places.screens.mainScreen.model
+package ru.skillbranch.places.screens.mainScreen.presentation.model
 
 import com.google.gson.annotations.SerializedName
 

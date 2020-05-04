@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/mainScreen"
-        android:name="ru.skillbranch.places.screens.mainScreen.view.MainScreen" />
+        android:name="ru.skillbranch.places.screens.mainScreen.presentation.view.MainScreen" />
 
     <fragment
         android:id="@+id/settingsScreen"
