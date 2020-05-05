@@ -1,16 +1,16 @@
 package ru.skillbranch.places.screens.mainScreen.domain
 
 import ru.skillbranch.places.screens.mainScreen.data.MainScreenRepository
+import ru.skillbranch.places.screens.mainScreen.presentation.model.PlacesModel
 
 interface MainScreenInteractor {
-    fun getPlace()
+    suspend fun getApiPlaces(): MutableList<PlacesModel?>
 }
 
 class MainScreenInteractorImp(
     private val repository: MainScreenRepository
-): MainScreenInteractor {
-    override fun getPlace(){
-        repository.getPlace()
-    }
+) : MainScreenInteractor {
 
+    override suspend fun getApiPlaces(): MutableList<PlacesModel?> =
+        repository.getApiPlaces()
 }

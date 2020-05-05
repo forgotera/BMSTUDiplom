@@ -43,13 +43,13 @@
             android:layout_height="18dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toStartOf="@+id/viewPagerTextInfo"
+            app:layout_constraintEnd_toStartOf="@+id/viewPagerTextUrl"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/viewPagerImage"
             tools:srcCompat="@android:drawable/btn_dialog" />
 
         <TextView
-            android:id="@+id/viewPagerTextInfo"
+            android:id="@+id/viewPagerTextUrl"
             style="@style/places.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
             android:layout_marginTop="16dp"
             android:textColor="@color/textTrend"
             app:layout_constraintStart_toEndOf="@+id/viewPagerImagePlace"
-            app:layout_constraintTop_toBottomOf="@+id/viewPagerTextInfo"
+            app:layout_constraintTop_toBottomOf="@+id/viewPagerTextUrl"
             tools:text="дом кукушкина" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import ru.skillbranch.places.screens.mainScreen.data.MainScreenRepositoryImpl
 import ru.skillbranch.places.screens.mainScreen.domain.MainScreenInteractorImp
 import ru.skillbranch.places.screens.mainScreen.presentation.view.MainScreen
 import ru.skillbranch.places.screens.mainScreen.presentation.viewmodel.MainScreenViewModel
+import ru.skillbranch.places.service.NetworkService
 import ru.skillbranch.places.utils.getViewModel
 
 class MainScreenConfigurator {
@@ -16,9 +17,11 @@ class MainScreenConfigurator {
         fun create(screen: MainScreen) {
             val daggerApplication = DaggerApplication.get(screen.requireActivity())
             val provider = daggerApplication.daggerMainActivityComponent.getRealmProvider()
+            val service = NetworkService
 
             val repository = MainScreenRepositoryImpl(
-                PlacesFilter(provider)
+                PlacesFilter(provider),
+                service
             )
 
             val mainScreenInteractor =

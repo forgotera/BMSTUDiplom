@@ -10,7 +10,7 @@ import ru.skillbranch.places.screens.mainScreen.presentation.model.PlacesModel
 class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerHolder>() {
 
     var onClick: (() -> Unit)? = null
-    var values: PlacesModel? = null
+    var values: List<PlacesModel?> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerHolder {
         val view: View =
@@ -18,10 +18,23 @@ class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerHolder>() {
         return parent.context.viewPagerHolder(view, onClick)
     }
 
-    override fun getItemCount(): Int  = 3
+    override fun getItemCount(): Int = 3
 
 
     override fun onBindViewHolder(holder: ViewPagerHolder, position: Int) {
-        holder.bind("test",R.drawable.batut,"jump","дом кукушкина")
+        val properties = values[position]?.features?.get(0)?.properties
+        val name = properties?.name
+        val description = properties?.description
+        var url: String? = "Данные отсутсвуеют"
+        if (properties?.companyMetaData != null) {
+            url = properties.companyMetaData.url
+        }
+
+        holder.bind(
+            name,
+            R.drawable.batut,
+            url,
+            description
+        )
     }
 }

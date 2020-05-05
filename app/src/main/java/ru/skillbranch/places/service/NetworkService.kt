@@ -16,15 +16,14 @@ interface PlacesApi{
     @GET(".")
     fun getPlaces(
         @Query("text") text:String,
-        @Query("lang") lang:String = Local.RU_RU.value,
+        @Query("lang") lang:String = Local.EN_EN.value,
         @Query("results") result:String = "3",
         //не искать за пределами области поиска
         @Query("rspn") rspn:String = "1"
     ):Deferred<Response<PlacesModel>>
 }
 
-
-object NetworkService  {
+object NetworkService {
 
     private val authInterceptor = Interceptor{
         val url = it.request()
