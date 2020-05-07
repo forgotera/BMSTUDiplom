@@ -16,10 +16,12 @@ interface PlacesApi{
     @GET(".")
     fun getPlaces(
         @Query("text") text:String,
-        @Query("lang") lang:String = Local.EN_EN.value,
-        @Query("results") result:String = "3",
+        //÷ентр области поиска. ќпредел€етс€ с помощью долготы и широты, разделенных зап€той.
+        @Query("ll") ll:String,
+        //–азмеры области поиска.
+        @Query("spn") spn:String = "1,1",
         //не искать за пределами области поиска
-        @Query("rspn") rspn:String = "1"
+        @Query("rspn") rspn:String = "0"
     ):Deferred<Response<PlacesModel>>
 }
 

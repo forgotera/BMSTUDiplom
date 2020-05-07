@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.skillbranch.places.R
+import ru.skillbranch.places.dataSource.PlacesFilter
+import ru.skillbranch.places.dictionary.MAIN_DICTIONARY
 import ru.skillbranch.places.screens.mainScreen.presentation.model.PlacesModel
 
 class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerHolder>() {
@@ -18,21 +20,31 @@ class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerHolder>() {
         return parent.context.viewPagerHolder(view, onClick)
     }
 
-    override fun getItemCount(): Int = 3
+    override fun getItemCount(): Int = PlacesFilter.TAKES_PLACES
 
 
     override fun onBindViewHolder(holder: ViewPagerHolder, position: Int) {
-        val properties = values[position]?.features?.get(0)?.properties
-        val name = properties?.name
-        val description = properties?.description
-        var url: String? = "Данные отсутсвуеют"
-        if (properties?.companyMetaData != null) {
-            url = properties.companyMetaData.url
+        val request = values[position]?.properties?.responseMetadata?.searchRequest?.request
+        val found = values[position]?.properties?.responseMetadata?.searchResponse?.found
+        var name: String? = ""
+        var description: String? = ""
+        var url: String? = "Данные отсутсвуют"
+
+        //если элементы найдены
+        if (found != 0) {
+
+            val properties = values[position]?.features?.get(0)?.properties
+            name = properties?.name
+            description = properties?.description
+
+            if (properties?.companyMetaData != null) {
+                url = properties.companyMetaData.url
+            }
         }
 
         holder.bind(
             name,
-            R.drawable.batut,
+            MAIN_DICTIONARY[request] ?: R.drawable.empty,
             url,
             description
         )

@@ -8,7 +8,7 @@ class PlacesFilter(
 ) : IplacesFilter {
 
     companion object {
-        private const val TAKES_PLACES = 3
+        const val TAKES_PLACES = 3
     }
 
     private val instance: Realm

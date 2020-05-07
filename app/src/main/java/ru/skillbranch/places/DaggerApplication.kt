@@ -12,6 +12,8 @@ class DaggerApplication : Application() {
     lateinit var daggerMainActivityComponent: MainActivityComponent
 
     companion object {
+        lateinit var app: DaggerApplication
+
         fun get(activity: Activity): DaggerApplication {
             return activity.application as DaggerApplication
         }
@@ -19,6 +21,7 @@ class DaggerApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        app = this
         daggerMainActivityComponent = DaggerMainActivityComponent.builder()
             .contextModule(ContextModule(this))
             .build()

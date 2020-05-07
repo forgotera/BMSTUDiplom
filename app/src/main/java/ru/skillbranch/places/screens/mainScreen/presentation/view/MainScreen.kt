@@ -1,11 +1,13 @@
 package ru.skillbranch.places.screens.mainScreen.presentation.view
 
+import android.Manifest
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import ru.skillbranch.places.MainActivity
 import ru.skillbranch.places.R
 import ru.skillbranch.places.screens.mainScreen.presentation.MainScreenConfigurator
 import ru.skillbranch.places.screens.mainScreen.presentation.model.PlacesModel
@@ -27,6 +29,19 @@ class MainScreen : Fragment() {
         Timber.plant(Timber.DebugTree())
         holder = mainScreenHolder(it)
         MainScreenConfigurator.create(this)
+
+        (activity as MainActivity)
+            .permissionModule
+            .checkPermissions(
+                arrayOf(
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ),
+                granted = {
+
+                }
+            )
+
         model.getPlaces()
         model.viewState.observe(viewLifecycleOwner, Observer { setPlaces(it) })
     }

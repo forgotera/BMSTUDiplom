@@ -8,10 +8,7 @@ val MAIN_DICTIONARY: Map<String, Int> = mapOf(
     "Батутный центр" to R.drawable.batut,
     "Центр скалалазания" to R.drawable.skolodrom,
     "Страйкбол" to R.drawable.strakbol,
-    "Гольф" to R.drawable.golf,
+    "Гольф центр" to R.drawable.golf,
     "Картинг" to R.drawable.karting
 
 )
-
-// редко посещаемые места
-var SHOWS_VALUES:MutableList<String> = MAIN_DICTIONARY.keys.toMutableList()

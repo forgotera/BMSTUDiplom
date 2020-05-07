@@ -11,10 +11,10 @@ data class CompanyMetaDataModel(
     val address:String?,
     @SerializedName("url")
     val url:String?,
-    @SerializedName("categories")
+    @SerializedName("Categories")
     val categories:List<CategoriesModel?>,
-    @SerializedName("phones")
+    @SerializedName("Phones")
     val phones:List <PhonesModel?>,
-    @SerializedName("hours")
+    @SerializedName("Hours")
     val hours:List <HoursModel?>
 )

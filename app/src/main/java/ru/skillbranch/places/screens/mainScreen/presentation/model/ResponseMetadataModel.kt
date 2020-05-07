@@ -3,8 +3,8 @@ package ru.skillbranch.places.screens.mainScreen.presentation.model
 import com.google.gson.annotations.SerializedName
 
 data class ResponseMetadataModel(
-    @SerializedName("searchRequest")
+    @SerializedName("SearchRequest")
     val searchRequest:SearchRequestModel,
-    @SerializedName("searchResponse")
+    @SerializedName("SearchResponse")
     val searchResponse:SearchResponseModel
 )
