@@ -1,6 +1,7 @@
 package ru.skillbranch.places.dataSource
 
 import io.realm.Realm
+import ru.skillbranch.places.dataSource.pojos.NameImage
 import ru.skillbranch.places.dataSource.pojos.PlacesListDb
 
 class PlacesFilter(
@@ -29,6 +30,18 @@ class PlacesFilter(
             //добавляем в конец,перемешав
             it?.placeList?.addAll(sublist.shuffled())
             sublist
+        }
+
+    override fun saveNameAndImage(name:String,imageUri:String) =
+        instance.useExecuteTransaction { realm ->
+            realm.insert(marshal(name,imageUri))
+        }
+
+    override fun getNameAndImage(): Pair<String?, String?> =
+        instance.maybeCopyFrom { realm ->
+            realm.where<NameImage>(NameImage::class.java).findFirst()
+        }.let {
+            marshal(it)
         }
 
 }

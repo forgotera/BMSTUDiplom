@@ -1,6 +1,7 @@
 package ru.skillbranch.places.screens.mainScreen.presentation.view
 
 import android.Manifest
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -38,10 +39,12 @@ class MainScreen : Fragment() {
                     Manifest.permission.ACCESS_FINE_LOCATION
                 ),
                 granted = {
-
                 }
             )
 
+        val (name, image) = model.getNameAndImage()
+        holder.avatar.setImageURI(Uri.parse(image))
+        holder.textHello.text = "Привет, $name"
         model.getPlaces()
         model.viewState.observe(viewLifecycleOwner, Observer { setPlaces(it) })
     }

@@ -33,4 +33,8 @@ class MainScreenViewModel(
         scope.coroutineContext.cancelChildren()
     }
 
+    fun getNameAndImage(): Pair<String?,String?> =
+        interactor.getNameAndImage()
+
+
 }

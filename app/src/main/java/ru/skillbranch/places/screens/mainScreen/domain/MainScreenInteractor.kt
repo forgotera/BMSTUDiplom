@@ -5,6 +5,8 @@ import ru.skillbranch.places.screens.mainScreen.presentation.model.PlacesModel
 
 interface MainScreenInteractor {
     suspend fun getApiPlaces(): MutableList<PlacesModel?>
+    fun getNameAndImage(): Pair<String?, String?>
+
 }
 
 class MainScreenInteractorImp(
@@ -13,4 +15,8 @@ class MainScreenInteractorImp(
 
     override suspend fun getApiPlaces(): MutableList<PlacesModel?> =
         repository.getApiPlaces()
+
+    override fun getNameAndImage(): Pair<String?, String?> =
+        repository.getNameAndImage()
+
 }

@@ -15,6 +15,7 @@ import ru.skillbranch.places.service.NetworkService
 
 interface MainScreenRepository {
     suspend fun getApiPlaces(): MutableList<PlacesModel?>
+    fun getNameAndImage():Pair<String?,String?>
 }
 
 
@@ -41,6 +42,9 @@ class MainScreenRepositoryImpl(
 
         return places
     }
+
+    override fun getNameAndImage(): Pair<String?, String?> =
+        dataBase.getNameAndImage()
 
     private fun getLatitudeAndLongitude(): String {
         val appContext =DaggerApplication.app.applicationContext

@@ -22,6 +22,10 @@ class RealmProvider @Inject constructor(
 
     var onRealmClosing: (() -> Unit)? = null
 
+    var isEmpty: Boolean = false
+        get() = _realm?.isEmpty ?: true
+        private set
+
     val instance: Realm
         get() = _realm ?: error("Realm not initialized")
 
@@ -51,6 +55,7 @@ class RealmProvider @Inject constructor(
         configuration = null
         Realm.deleteRealm(realmConfiguration())
     }
+
 
     private fun realmConfiguration(): RealmConfiguration {
         Realm.init(context)

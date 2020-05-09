@@ -19,11 +19,16 @@ class MainActivity : AppCompatActivity() {
 
         daggerApplication = DaggerApplication.get(this)
         //init dataBase
-        daggerApplication.daggerMainActivityComponent.getRealmProvider().initialization()
+        val realmProvider = daggerApplication.daggerMainActivityComponent.getRealmProvider()
+        realmProvider.initialization()
 
         val controller = findNavController(R.id.currentNavHostId)
+        var start = R.id.selectScreen
+        if(!realmProvider.isEmpty){
+            start = R.id.mainScreen
+        }
         controller.graph = controller.navInflater.inflate(R.navigation.main_graph).apply {
-            startDestination = R.id.selectScreen
+            startDestination = start
         }
     }
 

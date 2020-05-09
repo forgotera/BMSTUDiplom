@@ -1,5 +1,6 @@
 package ru.skillbranch.places.dataSource
 
+import ru.skillbranch.places.dataSource.pojos.NameImage
 import ru.skillbranch.places.dataSource.pojos.PlacesListDb
 
 fun marshal(place: List<String>, selectedPlaces: List<String>): PlacesListDb {
@@ -24,3 +25,14 @@ fun marshal(place: List<String>, selectedPlaces: List<String>): PlacesListDb {
 
     return realmList
 }
+
+fun marshal(name: String, ImageUri: String): NameImage {
+    val table = NameImage()
+    table.name = name
+    table.image = ImageUri
+    return table
+}
+
+fun marshal(table: NameImage?): Pair<String?, String?> =
+    table?.name to table?.image
+
