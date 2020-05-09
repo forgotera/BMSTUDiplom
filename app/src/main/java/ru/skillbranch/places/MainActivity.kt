@@ -6,6 +6,7 @@ import androidx.navigation.findNavController
 import ru.skillbranch.places.permissions.InnerPermissionCallback
 import ru.skillbranch.places.permissions.PermissionModule
 
+//точко входа
 class MainActivity : AppCompatActivity() {
 
     private lateinit var daggerApplication: DaggerApplication
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         val controller = findNavController(R.id.currentNavHostId)
         var start = R.id.selectScreen
+        //если бд не пуста перейти сразу к главном экрану
         if(!realmProvider.isEmpty){
             start = R.id.mainScreen
         }

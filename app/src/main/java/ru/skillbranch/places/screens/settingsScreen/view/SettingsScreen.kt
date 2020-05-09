@@ -11,6 +11,7 @@ import ru.skillbranch.places.R
 import ru.skillbranch.places.screens.settingsScreen.SettingsScreenConfigurator
 import ru.skillbranch.places.screens.settingsScreen.SettingsViewModel
 
+//экран настроек тут можно изменить имя и выбрать свой аватар
 class SettingsScreen : Fragment() {
 
 

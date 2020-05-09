@@ -15,6 +15,7 @@ import ru.skillbranch.places.screens.mainScreen.presentation.model.PlacesModel
 import ru.skillbranch.places.screens.mainScreen.presentation.viewmodel.MainScreenViewModel
 import timber.log.Timber
 
+//основной экран приложения тут отображаются три заведения
 class MainScreen : Fragment() {
 
     private lateinit var holder: MainScreenHolder

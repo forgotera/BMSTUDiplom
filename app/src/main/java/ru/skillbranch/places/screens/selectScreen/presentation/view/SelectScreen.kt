@@ -12,6 +12,7 @@ import ru.skillbranch.places.screens.selectScreen.presentation.SelectScreenConfi
 import ru.skillbranch.places.screens.selectScreen.presentation.SelectAdapter
 import ru.skillbranch.places.screens.selectScreen.presentation.viewModel.SelectScreenViewModel
 
+//экран выбора часто посещяемых заведений, отображается только при первом входе в приложения
 class SelectScreen : Fragment() {
 
     private lateinit var holder: SelectScreenHolder
