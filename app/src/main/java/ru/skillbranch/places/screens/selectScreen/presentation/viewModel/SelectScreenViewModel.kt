@@ -16,6 +16,7 @@ class SelectScreenViewModel(
     }
 
     fun check(value: String) {
+
         if (selectedValues.contains(value)) {
             selectedValues.remove(value)
         } else {

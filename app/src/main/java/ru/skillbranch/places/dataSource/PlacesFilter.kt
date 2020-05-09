@@ -4,7 +4,7 @@ import io.realm.Realm
 import ru.skillbranch.places.dataSource.pojos.NameImage
 import ru.skillbranch.places.dataSource.pojos.PlacesListDb
 
-class PlacesFilter(
+open class PlacesFilter(
     private val realmProvider: RealmProvider
 ) : IplacesFilter {
 

@@ -20,6 +20,8 @@ interface PlacesApi{
         @Query("ll") ll:String,
         //–азмеры области поиска.
         @Query("spn") spn:String = "1,1",
+        //предпочитаемый €зык ответа
+        @Query("lang") lang:String = Local.RU_RU.value,
         //не искать за пределами области поиска
         @Query("rspn") rspn:String = "0"
     ):Deferred<Response<PlacesModel>>
