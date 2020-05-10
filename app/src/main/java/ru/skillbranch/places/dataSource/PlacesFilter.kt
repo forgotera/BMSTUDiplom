@@ -34,6 +34,7 @@ open class PlacesFilter(
 
     override fun saveNameAndImage(name:String,imageUri:String) =
         instance.useExecuteTransaction { realm ->
+            realm.delete(NameImage::class.java)
             realm.insert(marshal(name,imageUri))
         }
 

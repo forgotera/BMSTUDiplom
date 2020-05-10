@@ -21,6 +21,11 @@ class MainScreen : Fragment() {
     lateinit var model: MainScreenViewModel
     private val adapter = ViewPagerAdapter()
 
+    override fun onResume() {
+        setData()
+        super.onResume()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,6 +54,11 @@ class MainScreen : Fragment() {
                 }
             )
 
+        setData()
+        model.viewState.observe(viewLifecycleOwner, Observer { setPlaces(it) })
+    }
+
+    private fun setData() {
         val (name, image) = model.getNameAndImage()
         if (image != "null") {
             holder.avatar.setImageURI(Uri.parse(image))
@@ -57,7 +67,6 @@ class MainScreen : Fragment() {
         }
 
         holder.textHello.text = "Привет, $name"
-        model.viewState.observe(viewLifecycleOwner, Observer { setPlaces(it) })
     }
 
 
