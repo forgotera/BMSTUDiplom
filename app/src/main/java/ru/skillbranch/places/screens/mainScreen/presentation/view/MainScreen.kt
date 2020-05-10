@@ -3,9 +3,8 @@ package ru.skillbranch.places.screens.mainScreen.presentation.view
 import android.Manifest
 import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import ru.skillbranch.places.MainActivity
@@ -30,6 +29,12 @@ class MainScreen : Fragment() {
 
         Timber.plant(Timber.DebugTree())
         holder = mainScreenHolder(it)
+
+        holder.toolbar.setOnMenuItemClickListener {
+            model.showSettings()
+            true
+        }
+
         MainScreenConfigurator.create(this)
 
         (activity as MainActivity)
@@ -40,14 +45,25 @@ class MainScreen : Fragment() {
                     Manifest.permission.ACCESS_FINE_LOCATION
                 ),
                 granted = {
+                    model.getPlaces()
                 }
             )
 
         val (name, image) = model.getNameAndImage()
-        holder.avatar.setImageURI(Uri.parse(image))
+        if (image != "null") {
+            holder.avatar.setImageURI(Uri.parse(image))
+        } else {
+            holder.avatar.setImageResource(R.drawable.camera)
+        }
+
         holder.textHello.text = "Привет, $name"
-        model.getPlaces()
         model.viewState.observe(viewLifecycleOwner, Observer { setPlaces(it) })
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.toolbar_menu, menu)
     }
 
     private fun setPlaces(places: MutableList<PlacesModel?>) {

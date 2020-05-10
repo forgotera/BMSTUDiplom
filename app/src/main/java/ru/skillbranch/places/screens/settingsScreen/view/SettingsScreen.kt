@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import ru.skillbranch.places.R
 import ru.skillbranch.places.screens.settingsScreen.SettingsScreenConfigurator
@@ -25,7 +26,14 @@ class SettingsScreen : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? = inflater.inflate(R.layout.settingsscreen, container, false).also {
+
         holder = settingsScreenHolder(it)
+        holder.toolbar.title = "Настройки"
+        holder.toolbar.navigationIcon = resources.getDrawable(R.drawable.arrow_back)
+        (activity as AppCompatActivity).setSupportActionBar(holder.toolbar)
+        holder.toolbar.setNavigationOnClickListener {
+            model.back()
+        }
         SettingsScreenConfigurator.create(this)
     }
 

@@ -36,5 +36,9 @@ class MainScreenViewModel(
     fun getNameAndImage(): Pair<String?,String?> =
         interactor.getNameAndImage()
 
+    fun showSettings() {
+        router.showSettings()
+    }
+
 
 }

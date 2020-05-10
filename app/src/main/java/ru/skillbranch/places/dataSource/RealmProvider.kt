@@ -45,7 +45,7 @@ class RealmProvider @Inject constructor(
         }
     }
 
-    fun isInitialized(): Boolean = _realm.use { it != null }
+    private fun isInitialized(): Boolean = _realm.use { it != null }
 
     fun close() {
         if (isInitialized()) {

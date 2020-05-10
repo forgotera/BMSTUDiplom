@@ -17,4 +17,8 @@ class SettingsViewModel(
     fun showMainScreen(){
         router.showMainScreen()
     }
+
+    fun back() {
+        router.back()
+    }
 }

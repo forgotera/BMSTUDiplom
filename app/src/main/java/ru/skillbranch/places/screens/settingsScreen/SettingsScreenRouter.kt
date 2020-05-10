@@ -5,6 +5,9 @@ import ru.skillbranch.places.R
 
 interface SettingsScreenRouter{
     fun showMainScreen()
+    fun back()
+
+
 }
 
 class SettingsScreenRouterImpl(
@@ -15,5 +18,9 @@ class SettingsScreenRouterImpl(
         navigation.navigate(R.id.mainScreen)
 
         //todo clear backStack
+    }
+
+    override fun back() {
+        navigation.navigateUp()
     }
 }
