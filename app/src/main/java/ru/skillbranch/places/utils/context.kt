@@ -43,6 +43,9 @@ inline fun scaleDrawable(scale: Float, gravity: Int = Gravity.CENTER, block: () 
         level = 1
     }
 
+fun Context.dip(value: Int): Int = (value * resources.displayMetrics.density).toInt()
+fun Context.dip(value: Float): Int = (value * resources.displayMetrics.density).toInt()
+
 fun Context.vectorDrawable(@DrawableRes resource: Int): VectorDrawableCompat =
     nullableVectorDrawable(resource) ?: error("Not found vector drawable")
 

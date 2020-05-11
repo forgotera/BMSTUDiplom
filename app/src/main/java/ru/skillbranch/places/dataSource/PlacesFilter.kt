@@ -17,6 +17,10 @@ open class PlacesFilter(
 
     override fun savePlaces(places: List<String>, selectedPlaces: List<String>) =
         instance.useExecuteTransaction { realm ->
+            //todo ужасное решение, но времени нет, надо бы придумать что то другое
+            if(realm.where<PlacesListDb>(PlacesListDb::class.java).findFirst() != null) {
+                realm.delete(PlacesListDb::class.java)
+            }
             realm.insert(marshal(places, selectedPlaces))
         }
 
@@ -25,17 +29,14 @@ open class PlacesFilter(
             realm.where<PlacesListDb>(PlacesListDb::class.java).findFirst()
         }.let {
             val sublist = it?.placeList?.take(TAKES_PLACES) ?: emptyList()
-            //удаляем записи из начала
-            it?.placeList?.removeAll(sublist)
-            //добавляем в конец,перемешав
-            it?.placeList?.addAll(sublist.shuffled())
+            savePlaces(it?.placeList?.toList()!!,sublist)
             sublist
         }
 
-    override fun saveNameAndImage(name:String,imageUri:String) =
+    override fun saveNameAndImage(name: String, imageUri: String) =
         instance.useExecuteTransaction { realm ->
             realm.delete(NameImage::class.java)
-            realm.insert(marshal(name,imageUri))
+            realm.insert(marshal(name, imageUri))
         }
 
     override fun getNameAndImage(): Pair<String?, String?> =

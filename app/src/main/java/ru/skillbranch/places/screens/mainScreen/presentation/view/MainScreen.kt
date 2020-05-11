@@ -5,13 +5,17 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.viewpager2.widget.ViewPager2
+import androidx.viewpager2.widget.ViewPager2.ORIENTATION_HORIZONTAL
 import ru.skillbranch.places.MainActivity
 import ru.skillbranch.places.R
 import ru.skillbranch.places.screens.mainScreen.presentation.MainScreenConfigurator
 import ru.skillbranch.places.screens.mainScreen.presentation.model.PlacesModel
 import ru.skillbranch.places.screens.mainScreen.presentation.viewmodel.MainScreenViewModel
+import ru.skillbranch.places.utils.dip
 import timber.log.Timber
 
 //основной экран приложения тут отображаются три заведения
@@ -50,13 +54,15 @@ class MainScreen : Fragment() {
                     Manifest.permission.ACCESS_FINE_LOCATION
                 ),
                 granted = {
-                    model.getPlaces()
                 }
             )
 
-        setData()
+
+        model.getPlaces()
         model.viewState.observe(viewLifecycleOwner, Observer { setPlaces(it) })
     }
+
+
 
     private fun setData() {
         val (name, image) = model.getNameAndImage()

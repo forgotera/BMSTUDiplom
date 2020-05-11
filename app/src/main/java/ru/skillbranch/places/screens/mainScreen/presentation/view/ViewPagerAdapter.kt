@@ -11,14 +11,12 @@ import ru.skillbranch.places.screens.mainScreen.presentation.model.PlacesModel
 
 class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerHolder>() {
 
-    var onClick: (() -> Unit)? = null
     var values: List<PlacesModel?> = listOf()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerHolder {
-        val view: View =
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerHolder =
+        ViewPagerHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.viewpageritem, parent, false)
-        return parent.context.viewPagerHolder(view, onClick)
-    }
+        )
 
     override fun getItemCount(): Int = PlacesFilter.TAKES_PLACES
 
