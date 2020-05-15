@@ -12,6 +12,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.ViewCompat
 import ru.skillbranch.places.R
 import ru.skillbranch.places.drawable.borderDrawable
 import ru.skillbranch.places.drawable.insetBottomDrawable
@@ -63,9 +64,8 @@ class PlaceView : FrameLayout {
 
 
     private fun initialization() {
-//        setBackgroundColor(Color.WHITE)
        setBackgroundDrawable(context.borderDrawable(context.dip(20), Color.BLACK))
-
+        ViewCompat.setElevation(this,context.dip(SHADOW).toFloat())
     }
 
     private fun topContainerDrawable(): Drawable = when {

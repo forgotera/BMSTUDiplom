@@ -11,19 +11,23 @@ import kotlin.coroutines.CoroutineContext
 class MainScreenViewModel(
     private val router: MainScreenRouter,
     private val interactor: MainScreenInteractor
-): BaseViewModel() {
+) : BaseViewModel() {
 
     private val placesJob = Job()
     private val coroutineContext: CoroutineContext
         get() = placesJob + Dispatchers.Default
     private val scope = CoroutineScope(coroutineContext)
+    var isSetting = false
 
     var viewState = mutableLiveData(mutableListOf<PlacesModel?>())
 
 
-    fun getPlaces(){
-        scope.launch {
-            viewState.postValue(interactor.getApiPlaces())
+    fun getPlaces() {
+        //почему то при навигации фрагмент пересоздается, хотя берется из стека
+        if (!isSetting) {
+            scope.launch {
+                viewState.postValue(interactor.getApiPlaces())
+            }
         }
     }
 
@@ -33,7 +37,7 @@ class MainScreenViewModel(
         scope.coroutineContext.cancelChildren()
     }
 
-    fun getNameAndImage(): Pair<String?,String?> =
+    fun getNameAndImage(): Pair<String?, String?> =
         interactor.getNameAndImage()
 
     fun showSettings() {

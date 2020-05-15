@@ -40,6 +40,7 @@ class MainScreen : Fragment() {
         holder = mainScreenHolder(it)
 
         holder.toolbar.setOnMenuItemClickListener {
+            model.isSetting = true
             model.showSettings()
             true
         }
@@ -54,25 +55,27 @@ class MainScreen : Fragment() {
                     Manifest.permission.ACCESS_FINE_LOCATION
                 ),
                 granted = {
+                    model.getPlaces()
                 }
             )
 
 
-        model.getPlaces()
         model.viewState.observe(viewLifecycleOwner, Observer { setPlaces(it) })
     }
 
 
 
     private fun setData() {
-        val (name, image) = model.getNameAndImage()
+        var (name, image) = model.getNameAndImage()
         if (image != "null") {
             holder.avatar.setImageURI(Uri.parse(image))
         } else {
             holder.avatar.setImageResource(R.drawable.camera)
         }
 
-        holder.textHello.text = "Привет, $name"
+        name = ", $name"
+
+        holder.textHello.text = "Привет$name"
     }
 
 
